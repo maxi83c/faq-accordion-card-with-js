@@ -1,0 +1,264 @@
+:root{
+  /* primary text */
+  --black: #1d1e35;
+  --orange: #f47c57;
+  /* background gradient: */
+  --violet: #af67e9;
+  --blue: #6565e7;
+  /* Neutral text */
+  --dark-gray: #4a4b5e;
+  --gray: #787887; 
+  /* dividers */
+  --divider: #e7e7e9;
+  /* transition time*/ 
+  --time: 0.5s;
+  }
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background-image: 
+  linear-gradient(var(--violet), var(--blue));
+  height: 612px;
+  min-width: 375px;
+  position: relative;
+}
+
+@media screen and (min-width: 1000px){
+  body{
+    height: max(632px, 100vh);
+  }
+}
+
+.main{
+  background-color: white;
+  min-width: 327px;
+  width: 327px;
+  margin: 148px auto 85px;
+  border-radius: 22px;
+  position: relative;
+  padding: 134px 0 49px 0;
+  box-shadow: 0 30px 30px -20px rgba(0,0,0,.4);
+}
+
+@media screen and (min-width: 48px){
+  .main{
+    width: 87%;
+    min-height: 509px;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .main{
+    width: 920px;
+    left: 22px;
+    padding: 67px 0 49px 0;
+    margin: 128px auto 85px;
+  }
+}
+
+.logo{
+  width:270px;
+  height: 220px;
+  position: absolute;
+  top:-108px;
+  left: 15px;
+  background-image: url(../images/illustration-woman-online-mobile.svg), url(../images/bg-pattern-mobile.svg) ;
+  background-position: top, 30px 107px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 48px){
+  .logo{
+    left: calc(50% - 150px);
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .logo{
+      width:389px;
+      min-height: 509px;
+      top: 0;
+      left: 0;
+      background-image: url(../images/illustration-woman-online-desktop.svg), url(../images/bg-pattern-desktop.svg) ;
+      background-position: -83px 71px, -576px -296px;
+    }
+
+  .logo::after{
+    content: '';
+    width: 191px;
+    height: 184px;
+    display: inline-block;
+    top: 207px;
+    left: -93px;
+    position: relative;
+    background-image: url(../images/illustration-box-desktop.svg);
+  }
+}
+
+.title{
+  text-transform: uppercase;
+  font-size: 32px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+@media screen and (min-width: 1000px){
+  .title{
+    width: 100px;
+    text-align: left;
+    margin-left: 477px;
+  }
+}
+
+.list{
+  list-style: none;
+  margin: 11px 0 0 0;
+  padding: 0;
+  position: relative;
+  top: 2px;
+}
+
+@media screen and (min-width: 1000px){
+  .list{
+    margin: 18px 0 0 474px;
+  }
+}
+
+.list__item{
+  width: 279px;
+  margin: 0 auto;
+  padding: 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+@media screen and (min-width: 48px){
+  .list__item{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .list__item{
+    margin: 0;
+    width: 351px;
+  }
+}
+
+.list__title{
+  font-size: 13px;
+  font-weight: 400;
+  width: 279px;
+  height: 50px;
+  line-height: 52px;
+  margin: 0;
+  color: var(--dark-gray);
+  position: relative;
+  left: 2px;
+  cursor: pointer;
+  letter-spacing: 0;
+}
+
+@media screen and (min-width: 48px){
+  .list__title{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .list__title{
+    width: 351px;
+    left: 1px;
+    top: -1px;
+  }
+
+  .list__title:hover{
+    color: var(--orange);
+  }
+}
+
+.list__title--show{
+  font-weight: 700;
+}
+
+.list__title::after{
+  content:"";
+  width: 10px;
+  height: 7px;
+  background-image: url(../images/icon-arrow-down.svg);
+  position: absolute;
+  top: 21px;
+  right: 0;
+  transition: transform var(--time);
+}
+
+@media screen and (min-width: 1000px){
+  .list__title::after{
+    top: 23px;
+    right: 17PX;
+  }
+}
+
+.list__title--show::after{
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 1000px){
+  .list__title--show::after{
+    top: 20px;
+  }
+}
+
+.list__content{
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  width: 259px;
+  max-height: 0; 
+  transform: scaleY(0);
+  transform-origin: top;
+  color: var(--gray);
+  overflow: hidden;
+  transition: transform var(--time);
+  position: relative;
+  margin: 0;
+}
+
+@media screen and (min-width: 48px){
+  .list__content{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .list__content{
+    width: 344px;
+  }
+}
+
+.list__title--show + .list__content{
+  max-height: max-content;
+  transform: scaleY(1);
+  transform-origin: top;
+  top: -6px;
+  margin: 0 0 11px 0;
+}
+
+.attribution{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: white;
+}
